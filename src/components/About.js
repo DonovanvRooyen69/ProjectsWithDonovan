@@ -5,6 +5,7 @@ import calender from '../assests/Calender.png';
 import launch from '../assests/Launch.png';
 import pen from '../assests/Pen.png';
 import stocks from '../assests/Stocks.png';
+import AnimatedReusable from './AnimatedReusable';
 
 function About() {
 
@@ -43,6 +44,7 @@ function About() {
           </p>
         </div>
         <div className="work-process-steps">
+          <AnimatedReusable delay={0}>
           <div className="step-card">
             <div className="icon-container">
               <img src={calender} alt="Research" />
@@ -53,6 +55,9 @@ function About() {
               Competitor analysis and data gathering are key.
             </p>
           </div>
+          </AnimatedReusable>
+
+          <AnimatedReusable delay={0.1}>
           <div className="step-card">
             <div className="icon-container">
               <img src={stocks} alt="Analyze" />
@@ -63,6 +68,9 @@ function About() {
               and user behaviors are identified.
             </p>
           </div>
+          </AnimatedReusable>
+
+          <AnimatedReusable delay={0.2}>
           <div className="step-card">
             <div className="icon-container">
               <img src={pen} alt="Design" />
@@ -73,6 +81,9 @@ function About() {
               Prototypes are created for testing and feedback.
             </p>
           </div>
+          </AnimatedReusable>
+
+          <AnimatedReusable delay={0.3}>
           <div className="step-card">
             <div className="icon-container">
               <img src={launch} alt="Launch" />
@@ -80,10 +91,10 @@ function About() {
             <h3>4. Launch</h3>
             <p>
               The final product is deployed and made available to users.
-              Performance is monitored and optimized. User feedback is gathered
-              for future iterations.
+              User feedback is gathered for future iterations.
             </p>
           </div>
+          </AnimatedReusable>
         </div>
       </div>
     </section>

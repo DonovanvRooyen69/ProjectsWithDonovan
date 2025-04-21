@@ -1,7 +1,7 @@
 
 .contact-section {
     padding: 80px 40px;
-    background-color: #f9f9f9;
+    background-color: inherit;
   }
   
   .contact-container {
@@ -16,12 +16,12 @@
   
   .contact-info-header h2 {
     font-size: 2.5em;
-    color: #333;
+    color: inherit;
     margin-bottom: 10px;
   }
   
   .contact-info-header p {
-    color: #666;
+    color: inherit;
     line-height: 1.6;
     margin-bottom: 30px;
   }

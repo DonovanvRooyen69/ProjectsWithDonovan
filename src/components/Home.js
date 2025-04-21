@@ -8,7 +8,7 @@ function Home() {
       <div className="home-grid">
         <div className="home-content">
           <h1>Hello, I'm</h1>
-          <h2 className="home-name">Donovan van Rooyen</h2>
+          <h2 className="home-name fade-in">Donovan van Rooyen</h2>
           <p className="home-description">
             I'm a 3rd year student at Belgium Campus studying software development.
             I strive to build immersive and beautiful web applications through

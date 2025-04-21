@@ -1,5 +1,5 @@
 .navbar {
-    background-color: white;
+    background-color: inherit;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -9,7 +9,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100; 
+    z-index: 100;
+    backdrop-filter: none; 
+  }
+
+  body.light-mode .navbar {
+    background-color: #ffffff;
+    color: #333;
+  }
+  
+  body.dark-mode .navbar {
+    background-color: #1a1a1a;
+    color: #f1f1f1;
   }
   
   .logo {
@@ -33,7 +44,18 @@
   .logo span {
     font-size: 1.2em;
     font-weight: bold;
-    color: #212121;
+    color: inherit;
+  }
+
+  .theme-toggle{
+    background-color: #50E3C2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
   }
   
   .nav-links {
@@ -50,15 +72,32 @@
   }
   
   .nav-link {
+    position: relative;
     text-decoration: none;
-    color: #757575;
+    color: inherit;
     font-size: 1em;
     transition: color 0.3s ease;
     cursor: pointer;
+    padding-bottom: 5px;
+  }
+
+  .nav-link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #50E3C2;
+    transition: width 0.3s ease-in-out;
   }
   
   .nav-link:hover {
     color: #212121;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
   }
   
   .contact-button {
@@ -72,4 +111,5 @@
   .contact-button:hover {
     background-color: #44BCA9;
     color: white;
+    cursor: pointer;
   }

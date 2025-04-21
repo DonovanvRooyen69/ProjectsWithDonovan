@@ -52,7 +52,7 @@ function Menu() {
             to="contact"
             smooth={true}
             duration={500}
-            className="nav-link contact-button"
+            className=" contact-button"
             spy={true}
             offset={-70}
           >

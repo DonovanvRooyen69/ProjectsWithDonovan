@@ -1,8 +1,7 @@
 
 .about-section {
     padding: 80px 40px; 
-    background-color: #f9f9f9; 
-    
+    background-color: inherit; 
   }
   
   .about-container {
@@ -31,12 +30,12 @@
   
   .about-content h1 {
     font-size: 2.5em;
-    color: #333;
+    color: inherit;
     margin-bottom: 20px;
   }
   
   .about-content p {
-    color: #666;
+    color: inherit;
     line-height: 1.6;
     margin-bottom: 30px;
   }
@@ -73,12 +72,12 @@
   
   .work-process-header h2 {
     font-size: 2.5em;
-    color: #333;
+    color: inherit;
     margin-bottom: 10px;
   }
   
   .work-process-header p {
-    color: #666;
+    color: inherit;
     line-height: 1.6;
     max-width: 80%;
   }
@@ -96,6 +95,13 @@
     border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
     text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative; 
+  }
+
+  .step-card:hover {
+    transform: translateX(-5px);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
   }
   
   .icon-container {
