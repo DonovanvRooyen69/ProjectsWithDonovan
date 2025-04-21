@@ -1,0 +1,152 @@
+
+.about-section {
+    padding: 80px 40px; 
+    background-color: #f9f9f9; 
+    
+  }
+  
+  .about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .about-image img {
+    width: 60%;
+    height: auto;
+    display: block;
+    padding: 25px;
+    border-radius: 30px;
+  }
+  
+  .about-content {
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .about-content h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .download-cv-button {
+    background-color: #50E3C2;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-cv-button:hover {
+    background-color: #44BCA9;
+  }
+
+  .work-process-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px; 
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+    align-items: start;
+  }
+  
+  .work-process-header {
+    margin: auto;
+    text-align: left;
+  }
+  
+  .work-process-header h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .work-process-header p {
+    color: #666;
+    line-height: 1.6;
+    max-width: 80%;
+  }
+  
+  .work-process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .step-card {
+    background-color: #b9f1e5;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+  }
+  
+  .icon-container {
+    background-color: #b9f1e5; 
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0 auto 20px;
+  }
+  
+  .icon-container img {
+    max-width: 55px;
+    max-height: 55px;
+  }
+  
+  .step-card h3 {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .step-card p {
+    color: white;
+    line-height: 1.5;
+  }
+  
+
+  @media (max-width: 768px) {
+    .about-container {
+      grid-template-columns: 1fr; 
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .about-image {
+      max-width: 80%;
+      margin: 0 auto 20px;
+    }
+    .about-content {
+      text-align: left; 
+      margin-top: 20px;
+    }
+
+    .work-process-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+    
+      .work-process-steps {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        margin-top: 20px;
+      }
+  }

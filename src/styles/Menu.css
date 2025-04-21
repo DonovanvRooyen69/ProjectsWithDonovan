@@ -1,0 +1,75 @@
+.navbar {
+    background-color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; 
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .initial-circle {
+    background-color: #50E3C2;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .logo span {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #212121;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    padding-right: 25px;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #757575;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    color: #212121;
+  }
+  
+  .contact-button {
+    background-color: #50E3C2;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .contact-button:hover {
+    background-color: #44BCA9;
+    color: white;
+  }

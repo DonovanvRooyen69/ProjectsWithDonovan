@@ -1,0 +1,53 @@
+
+.footer {
+    background-color: #1e272e;
+    color: #ffffff; 
+    padding: 20px 25px; 
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content:space-between;
+    align-items: center; 
+    width: 100%;
+  }
+  
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-circle {
+    background-color: #50e3c2; 
+    color: #ffffff; 
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 10px; 
+  }
+  
+  .logo-text {
+    font-size: 1.2em; 
+  }
+  
+  .copyright-text {
+    font-size: 0.9em; 
+  }
+  
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column; 
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-left {
+      margin-bottom: 10px;
+    }
+  }
