@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Home.css';
 import profile from '../assests/donovan-profile-photo.jpg';
+import AnimatedReusable from './AnimatedReusable';
 
 function Home() {
   return (
@@ -25,9 +26,11 @@ function Home() {
             </div>
           </div>
         </div>
+        <AnimatedReusable delay={0}>
         <div className="home-image">
           <img src={profile} alt="Donovan van Rooyen" />
         </div>
+        </AnimatedReusable>
       </div>
     </section>
   );

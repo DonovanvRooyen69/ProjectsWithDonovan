@@ -22,8 +22,7 @@ function Contact() {
           <div className="contact-details">
           <h2>Let's discuss your Project</h2>
             <p>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration.
+              Please fill out this form and I will contact you according to your project you want build.
             </p>
             <div className="address-info">
               <div className="icon">

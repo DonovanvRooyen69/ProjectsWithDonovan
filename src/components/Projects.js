@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/Projects.css';
 import Pic1 from '../assests/Python.png';
 import Pic2 from '../assests/Java.png';
 import Pic3 from '../assests/React.png';
 
 function Projects() {
+
+  const [showMessage, setShowMessage] = useState(false);
+  const handleClick = () => {
+    setShowMessage(true);
+  };
+
   return (
     <section id="projects" className="projects-section">
       <div className="projects-container">
@@ -81,7 +87,12 @@ function Projects() {
           </div>
         </div>
         <div className="projects-cta">
-          <button className="view-more-button">More Projects</button>
+        <button className="view-more-button" onClick={handleClick}>
+        More Projects
+      </button>
+      {showMessage && (
+        <p className="project-message">More projects incoming...</p>
+      )}
         </div>
       </div>
     </section>

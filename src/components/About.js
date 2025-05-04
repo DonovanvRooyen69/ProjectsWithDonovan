@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/About.css';
-import profile from '../assests/donovan-profile-photo.jpg';
+import profile from '../assests/profile.JPG';
 import calender from '../assests/Calender.png';
 import launch from '../assests/Launch.png';
 import pen from '../assests/Pen.png';

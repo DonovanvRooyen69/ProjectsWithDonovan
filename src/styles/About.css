@@ -90,7 +90,7 @@
   }
   
   .step-card {
-    background-color: #b9f1e5;
+    background-color: #97e0d0;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
@@ -105,7 +105,7 @@
   }
   
   .icon-container {
-    background-color: #b9f1e5; 
+    background-color: #97e0d0; 
     width: 70px;
     height: 70px;
     display: flex;
