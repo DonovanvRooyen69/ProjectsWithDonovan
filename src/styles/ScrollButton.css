@@ -18,3 +18,11 @@
     background-color: #0d9488;
   }
   
+  @media (max-width: 768px) {
+    .scroll-to-top {
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 14px;
+      font-size: 16px;
+    }
+  }

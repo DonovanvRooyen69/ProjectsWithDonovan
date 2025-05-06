@@ -23,3 +23,11 @@
 .theme-toggle-button:hover {
   background-color: #44BCA9;
 }
+
+@media screen and (max-width: 768px) {
+
+  .theme-toggle{
+    padding-top: 80px
+  }
+  
+}

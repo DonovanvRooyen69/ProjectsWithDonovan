@@ -113,3 +113,54 @@
     color: white;
     cursor: pointer;
   }
+
+  .nav-link.active {
+    color: #50E3C2;
+    font-weight: bold;
+  }
+  
+  .nav-link.active::after {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      display: inline;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 10px 15px;
+    }
+  
+    .nav-links {
+      flex-direction: row;
+      margin-top: 5px;
+    }
+  
+    .nav-links li {
+      margin-bottom: 10px;
+      margin-left: 15px;
+    }
+
+    .nav-link li:first-child{
+      margin-left: 0;
+    }
+  
+    .nav-link {
+      font-size: 0.75em;
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  
+    .contact-button {
+      width: 100%;
+      text-align: center;
+      font-size: 0.75em;
+    }
+  
+    .logo {
+      margin-bottom: 10px;
+      font-size: 0.75em;
+    }
+  }
+  

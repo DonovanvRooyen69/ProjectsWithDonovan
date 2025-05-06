@@ -22,9 +22,27 @@
   }
   
   .home-description {
-    color: inherit;
+    color: #50E3C2;
+    font-weight: bold;
+    font-size: 1.6em;
     line-height: 1.6;
     margin-bottom: 30px;
+  }
+
+  .download-cv-button {
+    background-color: #50E3C2;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+  }
+
+  .download-cv-button:hover {
+    background-color: #44BCA9;
   }
   
   .home-stats {
@@ -56,7 +74,7 @@
     overflow: hidden;  
     max-width: 400px; 
     max-height: 400px;
-    padding-left: 170px;
+    order: 2;
   }
   
   .home-image img {
@@ -70,6 +88,26 @@
     transform: scale(1.05);
     transition: transform 0.3s ease;
     
+  }
+
+  .image-and-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+  }
+  
+  .social-icons-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    order: -1;
+  }
+  
+  .social-icons-detail img {
+    width: 24px;
+    height: 24px;
   }
   
  

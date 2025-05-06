@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 import '../styles/Menu.css'
 
 function Menu() {
+    
   return (
     <nav className="navbar">
       <div className="logo">

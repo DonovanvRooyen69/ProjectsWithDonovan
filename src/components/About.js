@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/About.css';
-import profile from '../assests/profile.JPG';
+import profile from '../assests/profile.png';
 import calender from '../assests/Calender.png';
 import launch from '../assests/Launch.png';
 import pen from '../assests/Pen.png';
@@ -9,19 +9,13 @@ import AnimatedReusable from './AnimatedReusable';
 
 function About() {
 
-  const downloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/Donovan_van_Rooyen_CV.pdf';
-    link.download = "Donovan_van_Rooyen_CV.pdf";
-    link.click();
-  }
-
   return (
     <section id="about" className="about-section">
       <div className='about-container'>
+      <h1 className='header-about'>About Me</h1>
         <div className='about-image'>
           <img src={profile} alt="Donovan van Rooyen" />
-        </div>
+        </div>         
         <div className='about-content'>
           <h1>I am an User Experience Designer</h1>
           <p>
@@ -29,9 +23,10 @@ function About() {
             by a passion for crafting engaging user experiences. I collaborate
             closely with team members, bringing fresh ideas to life through
             thoughtful and clean code. I am always eager to explore new digital
-            possibilities.
+            possibilities. My work process is efficient and I use a step-by-step process
+            to ensure that I deliver the best possible results.
           </p>
-          <button className='download-cv-button'onClick={downloadCV}>Download CV</button>
+          
         </div>
       </div>
       <div className="work-process-container">
@@ -65,7 +60,7 @@ function About() {
             <h3>2. Analyze</h3>
             <p>
               Collected data is scrutinized for actionable insights. Patterns
-              and user behaviors are identified.
+              and user behaviors are identified and used to create valuable information. 
             </p>
           </div>
           </AnimatedReusable>
