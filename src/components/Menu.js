@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import '../styles/Menu.css'
+import '../styles/Menu.css';
 
 function Menu() {
-    
   return (
     <nav className="navbar">
       <div className="logo">
@@ -19,7 +18,7 @@ function Menu() {
             className="nav-link"
             spy={true}
             exact="true"
-            offset={-70} 
+            offset={-70}
           >
             Home
           </Link>
@@ -53,7 +52,7 @@ function Menu() {
             to="contact"
             smooth={true}
             duration={500}
-            className=" contact-button"
+            className="contact-button"
             spy={true}
             offset={-70}
           >

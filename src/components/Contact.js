@@ -14,14 +14,12 @@ function Contact() {
       <div className="contact-container">
         <div className="contact-info-header">
           <h2>Contact Information</h2>
-          <p>
-            For more info details about my services, please contact me
-          </p>
+          <p>For more info details about my services, please contact me</p>
         </div>
 
         <div className="contact-form-wrapper">
           <div className="contact-details">
-          <h2>Let's discuss your Project</h2>
+            <h2>Let's discuss your Project</h2>
             <p>
               Please fill out this form and I will contact you according to your project you want build.
             </p>
