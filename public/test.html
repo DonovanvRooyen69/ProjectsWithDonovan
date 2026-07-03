@@ -56,36 +56,36 @@
 <div class="crm-form-field">
   <label for="single_line">Name <span class="crm-form-required">*</span></label>
   <input id="single_line" type="text" name="single_line" placeholder="Name" required />
-
+  
 </div>
 
 <div class="crm-form-field">
   <label for="single_line_2">Surname <span class="crm-form-required">*</span></label>
   <input id="single_line_2" type="text" name="single_line_2" placeholder="Surname" required />
-
+  
 </div>
 
 <div class="crm-form-field">
   <label for="single_line_3">Company <span class="crm-form-required">*</span></label>
   <input id="single_line_3" type="text" name="single_line_3" required />
-
+  
 </div>
 
 <div class="crm-form-field">
   <label for="number">Phone number <span class="crm-form-required">*</span></label>
   <input id="number" type="number" name="number" required />
-
+  
 </div>
 
 <div class="crm-form-field">
   <label for="single_line_4">Email <span class="crm-form-required">*</span></label>
   <input id="single_line_4" type="email" name="single_line_4" required />
-
+  
 </div>
 
 <div class="crm-form-field">
   <label for="file_upload">File Upload</label>
-  <input id="file_upload" type="file" name="file_upload" />
+  <input id="file_upload" type="file" name="file_upload" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" />
   <div class="crm-form-help">Upload a PDF, image, or document.</div>
 </div>
     </div>
@@ -100,10 +100,24 @@
 
   <script>
     const FORM_TOKEN = `071af95fa63dd3b9ced8292a6201f8e0f4274f2b12eaf790a99ebc71bd4e1a13`;
-    const ENDPOINT = `https://crmdev.ersbio.co.za/api/v1/public_form_submit`;
+    const ENDPOINT = `https://crmdev.ersbio.co.za:8080/api/v1/public_form_submit`;
     const HIDDEN_DEFAULTS = {
   "lead_source": "Conference"
 };
+
+    function fileToPayload(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve({
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          dataUrl: typeof reader.result === "string" ? reader.result : ""
+        });
+        reader.onerror = () => reject(reader.error || new Error("Could not read file"));
+        reader.readAsDataURL(file);
+      });
+    }
 
     document.getElementById("crm-webform").addEventListener("submit", async function (event) {
       event.preventDefault();
@@ -113,6 +127,7 @@
       const values = { ...HIDDEN_DEFAULTS };
 
       new FormData(form).forEach((value, key) => {
+        if (value instanceof File) return;
         if (values[key]) {
           values[key] = Array.isArray(values[key]) ? [...values[key], value] : [values[key], value];
         } else {
@@ -123,6 +138,10 @@
       form.querySelectorAll('input[type="checkbox"]').forEach((input) => {
         values[input.name] = input.checked;
       });
+
+      for (const input of form.querySelectorAll('input[type="file"]')) {
+        values[input.name] = await Promise.all(Array.from(input.files || []).map(fileToPayload));
+      }
 
       message.textContent = "Submitting...";
 
