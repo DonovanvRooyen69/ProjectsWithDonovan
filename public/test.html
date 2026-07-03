@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Test</title>
+  <style>
+    .crm-form {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px;
+      font-family: Arial, sans-serif;
+      color: #111827;
+      background: #ffffff;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+    }
+    .crm-form h1 { margin: 0 0 8px; font-size: 26px; }
+    .crm-form-description { margin: 0 0 24px; color: #64748b; }
+    .crm-form-grid { display: grid; gap: 18px; }
+    .crm-form-field label { display: block; margin-bottom: 7px; font-weight: 700; color: #334155; }
+    .crm-form-field input,
+    .crm-form-field textarea,
+    .crm-form-field select {
+      width: 100%;
+      min-height: 42px;
+      box-sizing: border-box;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 9px 11px;
+      font: inherit;
+    }
+    .crm-form-field textarea { min-height: 100px; }
+    .crm-form-checkbox label { display: flex; gap: 8px; align-items: center; }
+    .crm-form-checkbox input { width: auto; min-height: auto; }
+    .crm-form-help { margin-top: 5px; color: #64748b; font-size: 12px; }
+    .crm-form-required { color: #dc2626; }
+    .crm-form-actions { display: flex; gap: 10px; margin-top: 22px; }
+    .crm-form button {
+      border: 0;
+      border-radius: 6px;
+      padding: 10px 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .crm-form-submit { color: white; background: #2563eb; }
+    .crm-form-reset { color: #334155; background: #e2e8f0; }
+    .crm-form-message { margin-top: 16px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <form class="crm-form" id="crm-webform">
+    <h1>Test</h1>
+    <p class="crm-form-description">Test</p>
+
+    <div class="crm-form-grid">
+<div class="crm-form-field">
+  <label for="single_line">Name <span class="crm-form-required">*</span></label>
+  <input id="single_line" type="text" name="single_line" placeholder="Name" required />
+
+</div>
+
+<div class="crm-form-field">
+  <label for="single_line_2">Surname <span class="crm-form-required">*</span></label>
+  <input id="single_line_2" type="text" name="single_line_2" placeholder="Surname" required />
+
+</div>
+
+<div class="crm-form-field">
+  <label for="single_line_3">Company <span class="crm-form-required">*</span></label>
+  <input id="single_line_3" type="text" name="single_line_3" required />
+
+</div>
+
+<div class="crm-form-field">
+  <label for="number">Phone number <span class="crm-form-required">*</span></label>
+  <input id="number" type="number" name="number" required />
+
+</div>
+
+<div class="crm-form-field">
+  <label for="single_line_4">Email <span class="crm-form-required">*</span></label>
+  <input id="single_line_4" type="email" name="single_line_4" required />
+
+</div>
+
+<div class="crm-form-field">
+  <label for="file_upload">File Upload</label>
+  <input id="file_upload" type="file" name="file_upload" />
+  <div class="crm-form-help">Upload a PDF, image, or document.</div>
+</div>
+    </div>
+
+    <div class="crm-form-actions">
+      <button class="crm-form-submit" type="submit">Submit</button>
+      <button class="crm-form-reset" type="reset">Reset</button>
+    </div>
+
+    <div class="crm-form-message" id="crm-form-message"></div>
+  </form>
+
+  <script>
+    const FORM_TOKEN = `071af95fa63dd3b9ced8292a6201f8e0f4274f2b12eaf790a99ebc71bd4e1a13`;
+    const ENDPOINT = `https://crmdev.ersbio.co.za/api/v1/public_form_submit`;
+    const HIDDEN_DEFAULTS = {
+  "lead_source": "Conference"
+};
+
+    document.getElementById("crm-webform").addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      const message = document.getElementById("crm-form-message");
+      const values = { ...HIDDEN_DEFAULTS };
+
+      new FormData(form).forEach((value, key) => {
+        if (values[key]) {
+          values[key] = Array.isArray(values[key]) ? [...values[key], value] : [values[key], value];
+        } else {
+          values[key] = value;
+        }
+      });
+
+      form.querySelectorAll('input[type="checkbox"]').forEach((input) => {
+        values[input.name] = input.checked;
+      });
+
+      message.textContent = "Submitting...";
+
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ token: FORM_TOKEN, values })
+        });
+
+        const data = await res.json();
+        if (!res.ok || data.ok === false) {
+          throw new Error(data.message || data.error || "Submission failed");
+        }
+
+        message.textContent = "Thank you. Your response has been submitted.";
+        form.reset();
+      } catch (error) {
+        message.textContent = error instanceof Error ? error.message : "Submission failed";
+      }
+    });
+  </script>
+</body>
+</html>

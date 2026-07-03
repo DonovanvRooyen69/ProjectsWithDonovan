@@ -1,0 +1,33 @@
+
+.light-mode {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.dark-mode {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.theme-toggle{
+  background-color: #50E3C2;
+  color: white;
+  border: none;
+  border-radius: 8px 0px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  padding-top: 50px;
+}
+
+.theme-toggle-button:hover {
+  background-color: #44BCA9;
+}
+
+@media screen and (max-width: 768px) {
+
+  .theme-toggle{
+    padding-top: 80px
+  }
+  
+}

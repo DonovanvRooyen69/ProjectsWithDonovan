@@ -1,0 +1,166 @@
+.navbar {
+    background-color: inherit;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: none; 
+  }
+
+  body.light-mode .navbar {
+    background-color: #ffffff;
+    color: #333;
+  }
+  
+  body.dark-mode .navbar {
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .initial-circle {
+    background-color: #50E3C2;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .logo span {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: inherit;
+  }
+
+  .theme-toggle{
+    background-color: #50E3C2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    padding-right: 25px;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-link {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    padding-bottom: 5px;
+  }
+
+  .nav-link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #50E3C2;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    color: #212121;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .contact-button {
+    background-color: #50E3C2;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .contact-button:hover {
+    background-color: #44BCA9;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nav-link.active {
+    color: #50E3C2;
+    font-weight: bold;
+  }
+  
+  .nav-link.active::after {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      display: inline;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 10px 15px;
+    }
+  
+    .nav-links {
+      flex-direction: row;
+      margin-top: 5px;
+    }
+  
+    .nav-links li {
+      margin-bottom: 10px;
+      margin-left: 15px;
+    }
+
+    .nav-link li:first-child{
+      margin-left: 0;
+    }
+  
+    .nav-link {
+      font-size: 0.75em;
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  
+    .contact-button {
+      width: 100%;
+      text-align: center;
+      font-size: 0.75em;
+    }
+  
+    .logo {
+      margin-bottom: 10px;
+      font-size: 0.75em;
+    }
+  }
+  
