@@ -78,6 +78,12 @@
   <input id="email" type="email" name="email" />
   
 </div>
+
+<div class="crm-form-field">
+  <label for="file_upload">File Upload</label>
+  <input id="file_upload" type="file" name="file_upload" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" />
+  <div class="crm-form-help">Upload a PDF, image, or document.</div>
+</div>
     </div>
 
     
@@ -94,7 +100,7 @@
     const FORM_TOKEN = `2b5001ebf1fe4f2d89bb96706798697020b488a3023a1883d4658c4b35855832`;
     const ENDPOINT = `https://crmdev.ersbio.co.za:8080/api/v1/public_form_submit`;
     const HIDDEN_DEFAULTS = {};
-    const RECAPTCHA_ENABLED = false;
+    const RECAPTCHA_ENABLED = true;
 
     function fileToPayload(file) {
       return new Promise((resolve, reject) => {
