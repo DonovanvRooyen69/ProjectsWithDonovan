@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Captcha Test</title>
+  <title>Domain Check</title>
   <style>
     .crm-form {
       max-width: 760px;
@@ -49,31 +49,31 @@
 </head>
 <body>
   <form class="crm-form" id="crm-webform">
-    <h1>Captcha Test</h1>
+    <h1>Domain Check</h1>
     
 
     <div class="crm-form-grid">
 <div class="crm-form-field">
-  <label for="single_line">name</label>
+  <label for="single_line">Name</label>
   <input id="single_line" type="text" name="single_line" />
   
 </div>
 
 <div class="crm-form-field">
-  <label for="single_line_2">surname</label>
+  <label for="single_line_2">last name</label>
   <input id="single_line_2" type="text" name="single_line_2" />
   
 </div>
 
 <div class="crm-form-field">
-  <label for="single_line_3">email</label>
-  <input id="single_line_3" type="email" name="single_line_3" />
+  <label for="number">Number</label>
+  <input id="number" type="number" name="number" />
   
 </div>
 
 <div class="crm-form-field">
-  <label for="single_line_4">number</label>
-  <input id="single_line_4" type="number" name="single_line_4" />
+  <label for="email">Email</label>
+  <input id="email" type="email" name="email" />
   
 </div>
     </div>
@@ -87,11 +87,9 @@
   </form>
 
   <script>
-    const FORM_TOKEN = `7d8c418b10f4d8f0d544d0111582d97800ef0771c95ce0d6695ee92f0bb687af`;
+    const FORM_TOKEN = `b9e56a202dcf2e64d532a611378476520358525fef076c948f3757d423dd02ad`;
     const ENDPOINT = `https://crmdev.ersbio.co.za:8080/api/v1/public_form_submit`;
-    const HIDDEN_DEFAULTS = {
-  "lead_source": "Other"
-};
+    const HIDDEN_DEFAULTS = {};
 
     function fileToPayload(file) {
       return new Promise((resolve, reject) => {
