@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>lzkbcvx</title>
+  <title>Capure Leads</title>
   <style>
     .crm-form {
       max-width: 760px;
@@ -47,35 +47,35 @@
     .crm-form-reset { color: #334155; background: #e2e8f0; }
     .crm-form-message { margin-top: 16px; font-weight: 700; }
   </style>
-
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <form class="crm-form" id="crm-webform">
-    <h1>lzkbcvx</h1>
+    <h1>Capure Leads</h1>
     
 
     <div class="crm-form-grid">
 <div class="crm-form-field">
-  <label for="single_line">name</label>
+  <label for="single_line">err</label>
   <input id="single_line" type="text" name="single_line" />
   
 </div>
 
 <div class="crm-form-field">
-  <label for="single_line_2">surname</label>
+  <label for="single_line_2">ret</label>
   <input id="single_line_2" type="text" name="single_line_2" />
   
 </div>
 
 <div class="crm-form-field">
-  <label for="number">Number</label>
-  <input id="number" type="number" name="number" />
+  <label for="single_line_3">ret</label>
+  <input id="single_line_3" type="email" name="single_line_3" />
   
 </div>
 
 <div class="crm-form-field">
-  <label for="email">Email</label>
-  <input id="email" type="email" name="email" />
+  <label for="phone">Phone</label>
+  <input id="phone" type="tel" name="phone" />
   
 </div>
 
@@ -86,7 +86,9 @@
 </div>
     </div>
 
-    
+    <div class="crm-form-field crm-form-recaptcha">
+      <div class="g-recaptcha" data-sitekey="6LdjskAtAAAAAOoI2yfhE_URUkrwqNQAcMSec0__"></div>
+    </div>
 
     <div class="crm-form-actions">
       <button class="crm-form-submit" type="submit">Submit</button>
@@ -97,7 +99,7 @@
   </form>
 
   <script>
-    const FORM_TOKEN = `2b5001ebf1fe4f2d89bb96706798697020b488a3023a1883d4658c4b35855832`;
+    const FORM_TOKEN = `a944580544eaeb808e700bf4bd2c65640a5f007fea670181bae44e937eef515e`;
     const ENDPOINT = `https://crmdev.ersbio.co.za:8080/api/v1/public_form_submit`;
     const HIDDEN_DEFAULTS = {};
     const RECAPTCHA_ENABLED = true;
